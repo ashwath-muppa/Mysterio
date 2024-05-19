@@ -6,7 +6,6 @@ import tensorflow as tf
 import tensorflow_hub as hub
 import numpy as np
 from nltk.corpus import wordnet
-import time
 from PIL import Image
 import math
 from rembg import remove

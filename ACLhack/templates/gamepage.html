@@ -18,8 +18,6 @@
                     <button type="submit" name="revealPixelButton" value="clicked">Reveal Pixels</button>
                 </form>
 
-
-                <!-- <button type="submit" name="resetInput" value="clicked">Clear History</button> -->
                 <div class="image-container">
                     <img src="static/cur.png" alt="Silhouette">
                 </div>
@@ -49,7 +47,7 @@
                     <button type="submit" name="resetInput" value="clicked">Clear History</button>
                 </div>
             </form>
-            <div id="inputHistory" class="scroll-panel"> <!-- Added class scroll-panel -->
+            <div id="inputHistory" class="scroll-panel">
                 <h3>Input History</h3>
                 <ul id="historyList">
                     {% for item in history %}
