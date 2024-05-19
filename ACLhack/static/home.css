@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    font-family: 'Comic Sans MS', cursive;
+    background-color: #2E3047;
+    color: #43455C;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+header {
+    background-color: #3c3f58;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+main {
+    width: 100%;
+    padding: 20px;
+}
+
+.section {
+    width: 80%;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #707793;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.5s ease;
+}
+
+.start-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 15px 30px;
+    font-family: "Comic Sans MS",cursive;
+    font-size: 30px;
+    background-color: #3BBA9C;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.start-button:hover {
+    background-color: #0056b3;
+}
+
+/* Animation classes */
+.animate-left {
+    animation: animateLeft 0.5s forwards;
+}
+
+.animate-right {
+    animation: animateRight 0.5s forwards;
+}
+
+.instructions-panel {
+    position: fixed;
+    left: 0;
+    top: 100px; /* Adjust this value based on header height */
+    width: 250px;
+    background-color: #3BBA9C;
+    padding: 20px;
+    border-radius: 0 10px 10px 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.instructions-panel.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.instructions-panel h2 {
+    margin-top: 0;
+}
+
+@keyframes animateLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes animateRight {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

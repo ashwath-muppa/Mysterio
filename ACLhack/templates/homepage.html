@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mysterio!</title>
+    <link rel="stylesheet" href="static/home.css">
+</head>
+<body>
+    <button id="startButton" class="start-button" onclick="startGame()">Start</button>
+    <header>
+        <h1>Mysterio</h1>
+    </header>
+    <main>
+        <div class="instructions-panel" id="instructionsPanel">
+            <h2>Instructions</h2>
+            <p>Follow these steps to play the game:</p>
+            <ul>
+                <li>Read the goal and understand the objective.</li>
+                <li>Input your guesses based on the silhouette.</li>
+                <li>Check your score after each guess.</li>
+                <li>If your score falls to zero or below, the game ends.</li>
+                <li>Try to get the highest score to beat your best scores on the leaderboard</li>
+            </ul>
+        </div>
+        <section class="section" id="section1">
+            <h2>Goal</h2>
+            <p>Try and figure out the mystery image! Keep solving until you get a lot wrong.</p>
+        </section>
+        <section class="section" id="section2">
+            <h2>Input</h2>
+            <p>On the screen will be the silhouette of a mystery item. You are trying to find out what that item is. Every time you guess a word, we will tell you how "far" you are from the answer.</p>
+        </section>
+        <section class="section" id="section3">
+            <h2>Scoring</h2>
+            <p>Every time you guess, a certain amount of points will be deducted from your possible earnings for the round, based on how close/far you are from the answer. Once the round ends, the amount of remaining points will be added to your total score.</p>
+        </section>
+        <section class="section" id="section4">
+            <h2>Game End</h2>
+            <p>If your possible score for one round ends up falling to or below 0, your game is over. If you score high enough, you can make it on your personal leaderboard!</p>
+        </section>
+        
+        <!-- Add more sections as needed -->
+    </main>
+    <script>
+        window.addEventListener('scroll', () => {
+        const sections = document.querySelectorAll('.section');
+        sections.forEach((section, index) => {
+            const position = section.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+            if (position < windowHeight / 1.3) {
+                section.classList.add(index % 2 === 0 ? 'animate-left' : 'animate-right');
+            }
+        });
+    });
+
+        window.addEventListener('DOMContentLoaded', () => {
+                const instructionsPanel = document.getElementById('instructionsPanel');
+                setTimeout(() => {
+                    instructionsPanel.classList.add('show');
+                }, 500); // Adjust the delay as needed
+            });
+
+    
+    // Function to start the game (redirect to gamepage.html)
+    function startGame() {
+        window.location.href = 'gamepage.html';
+    }
+    </script> <!-- Add JavaScript for animations -->
+</body>
+</html>

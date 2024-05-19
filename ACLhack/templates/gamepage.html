@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mysterio</title>
+    <link rel="stylesheet" href="static/games.css">
+</head>
+<body>
+    <header>
+        <h1>Mysterio</h1>
+    </header>
+    <main>
+        <div class="top-half">
+            <div class="panel image-panel">
+
+                <form action="/gamepage.html" method="post">
+                    <button type="submit" name="revealPixelButton" value="clicked">Reveal Pixels</button>
+                </form>
+
+
+                <!-- <button type="submit" name="resetInput" value="clicked">Clear History</button> -->
+                <div class="image-container">
+                    <img src="static/cur.png" alt="Silhouette">
+                </div>
+            </div>
+            <div class="panel score-panel">
+                    <div id="scoreCounter">Total Score: <span id="score">{{score}}</span></div>
+                </div>
+            <div class="panel leaderboard-panel", style="align-items:center">
+                <div class="leaderboard-container", style="align-items:center">
+                    <h3>Leaderboard</h3>
+                    <ul id="leaderboardList", style="align-items:center">
+                        {% for item in leaderboard %}
+                            <li>{{ item }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+
+
+        <div class="panel input-panel">
+            <form action="/gamepage.html" method="post">
+                <div class="input-container">
+                    <input type="text" name="playerInput" id="playerInput" placeholder="Enter your input">
+                    <button type="submit">Submit</button>
+                    <button type="submit" name="resetInput" value="clicked">Clear History</button>
+                </div>
+            </form>
+            <div id="inputHistory" class="scroll-panel"> <!-- Added class scroll-panel -->
+                <h3>Input History</h3>
+                <ul id="historyList">
+                    {% for item in history %}
+                        <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>        
+
+    
+    </main>
+</body>
+</html>
