@@ -25,7 +25,7 @@ Mysterio is a Flask-based web application where players guess a hidden word by r
 1. Clone the repository:
     ```bash
     git clone https://github.com/ashwath-muppa/Mysterio
-    cd mysterio-game
+    cd Mysterio
     ```
 
 2. Create a virtual environment and activate it:
